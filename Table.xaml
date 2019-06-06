@@ -1,0 +1,73 @@
+﻿<Window x:Name="WindowTable" x:Class="Cursach.Table"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        KeyDown="KeyDown_Event"
+        Title="Table" Height="524.477" Width="972.239" Background="#061420" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" FontWeight="Bold">
+    <Grid x:Name="GridTable">
+        <Rectangle  x:Name="rectangleTop" Fill="#061420" HorizontalAlignment="Left" Height="73" Stroke="Black" VerticalAlignment="Top" Width="972" Margin="0,-10,0,0"/>
+        <Image Source="Resource/logo_multi.png" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="41" Margin="23,10,0,0" VerticalAlignment="Top" Width="48"/>
+        <ScrollViewer x:Name="ScrollViewerTable" Margin="0,63,0,0" >
+            <Grid x:Name="GridTableUser" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--TopTableRight-->
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <StackPanel x:Name="ModaleWindow" Grid.Row="0" Grid.Column="0">
+                    <Button Content="Настройка даты" Click="SettingsDateOpenMD_Click" x:Name="SettingsDateOpenMD"></Button>
+                </StackPanel>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel x:Name="TopNumberDatePanel" Grid.Row="0" Grid.Column="0" />
+                    <StackPanel x:Name="TopDatePanel" Grid.Row="1" Grid.Column="0"  />
+                </Grid>
+                <!--LeftTable-->
+                <StackPanel x:Name="LeftTable" Grid.Row="1" Grid.Column="0"/>
+                <!-- MainTable -->
+                <UniformGrid Grid.Row="1"  Grid.Column="1" x:Name="TableShedule" Background="#061420"/>
+                <!--TopTable-->
+                <!--RightTable-->
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" x:Name="RightTableWorkingDay" />
+                    <StackPanel Grid.Row="0" Grid.Column="1" x:Name="RightTableWeekends" />
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <!-- Модальное окно "Настройка даты" -->
+        <StackPanel x:Name="SettingsDate" Visibility="Hidden" Background="Gray">
+            <Button x:Name="SettingsDateButton"> </Button>
+        </StackPanel>
+        <Button x:Name="back_form" Content="Вернуться" HorizontalAlignment="Left" Margin="835,18,0,0" VerticalAlignment="Top" Width="75" Click="Back_form_Click"/>
+    </Grid>
+
+</Window>
